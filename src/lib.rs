@@ -1,5 +1,6 @@
 #![forbid(unsafe_code)]
-//! Library entry point for an Xmip component.
+//! Time-driven triggers for Xmip work.
 //!
-//! Replace this template documentation only after the repository responsibility,
-//! public contracts and dependency direction are accepted in the Xmip architecture.
+//! This planned platform capability will schedule Processes, commands, and
+//! Receive and Send actions without owning their execution. No public
+//! scheduling API is implemented yet.
