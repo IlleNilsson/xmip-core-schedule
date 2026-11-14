@@ -7,10 +7,25 @@ version = "0.1.0"
 edition = "2024"
 license = "AGPL-3.0-or-later"
 repository = "https://github.com/IlleNilsson/xmip-core-schedule"
-description = "Time-driven triggers for processes, commands, and receive and send actions."
+description = "Decides when Xmip work runs: a Receive Location's rest between receives, and when a Send Port queue's earliest retry is due."
 
 [lib]
 path = "src/lib.rs"
 
+# No dependency: what it decides is read from a clock and durations alone,
+# and the runtime that waits and acts on it depends on it, never the other
+# way (ADR-0058, amendment 2026-11-13).
+
 [lints.rust]
 unsafe_code = "forbid"
+
+[lints.clippy]
+too_many_lines = "warn"
+pedantic = { level = "warn", priority = -1 }
+missing_errors_doc = "warn"
+missing_panics_doc = "warn"
+unwrap_used = "warn"
+expect_used = "allow"
+
+[profile.dev.package."*"]
+opt-level = 3
