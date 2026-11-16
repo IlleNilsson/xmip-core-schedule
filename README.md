@@ -22,7 +22,9 @@ amendment of that date).
   for one, kept per queue however many wait (`Due`), counted by the newest
   read, a due time a hand-on noted kept across a read under way, and the
   `earliest` the send step wakes for (`doc/architecture/runtime-model.md`
-  section 10, open problem 43).
+  section 10, open problem 43), each moment a reading of the node's
+  monotonic Clock in nanoseconds, so a test steps past a due time with no
+  sleep (ADR-0068, amendment 2026-11-15).
 
 Every default is a default only: a cluster and a node set their own in the
 Cluster TOML's `[tuning]`.
